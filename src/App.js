@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      input: '',
+      i: 0
     }
   }
   preview() {
@@ -29,8 +30,15 @@ class App extends React.Component {
       var workbook = XLSX.read(data, { type: "array" });
       if (callback) callback(workbook);
     }).catch(err => {
-      console.log(err, 'err');
-
+      if (err && this.state.i < 1) {
+        let curIndex = this.state.i;
+        curIndex++
+        this.setState({
+          i: curIndex
+        }, () => {
+          this.preview()
+        })
+      }
     })
   }
   // 将表格追加到页面节点展示

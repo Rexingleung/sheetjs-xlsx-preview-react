@@ -1,3 +1,5 @@
+# sheetjs-xlsx-preview-react
+> 基于xlsx模块的Excel在线预览的一个react项目 , 预览的excel必须是一个真实或者是经过网关转发的一个Excel地址 , 如果出现跨域问题, 可在package进行设置proxy ;
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
